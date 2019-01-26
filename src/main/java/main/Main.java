@@ -1,15 +1,16 @@
 package main;
 
-import pizza.CapriciosaPizza;
-import pizza.HawaiPizza;
+import pizza.*;
+
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        CapriciosaPizza capriciosaPizza = new CapriciosaPizza();
-        HawaiPizza hawaiPizza = new HawaiPizza();
+        PizzaFactory factory = new PizzaFactory();
 
-        capriciosaPizza.showPizzaInfo();
-        hawaiPizza.showPizzaInfo();
+        Pizza capriciosa = factory.createPizza(PizzaType.CAPRICIOSA, 24.00, Arrays.asList("Cheese", "Ham", "Champignons"));
+        System.out.println(capriciosa);
+
     }
 
 }
